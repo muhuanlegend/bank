@@ -23,7 +23,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
                 className='size-[24px] max-xl:size-14'
                 />
                 <h1 className='sidebar-logo' >
-                    Miles
+                    Protector
                 </h1>
             </Link>
             {sidebarLinks.map((item) => {
