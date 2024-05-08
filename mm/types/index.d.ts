@@ -328,3 +328,5 @@ declare interface getBankProps {
 declare interface getBankByAccountIdProps {
   accountId: string;
 }
+
+
