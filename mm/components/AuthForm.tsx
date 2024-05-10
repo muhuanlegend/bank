@@ -20,7 +20,7 @@ const AuthForm = ({type}: {type: string}) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  // const loggedInUser = await getLoggedInUser();
+
 
   const formSchema = authFormSchema(type);
   
@@ -46,11 +46,11 @@ const onSubmit = async (data: z.infer<typeof formSchema>) => {
     }
 
     if(type === 'sign-in') {
-      // const response = await signIn({
-      //   email: data.email,
-      //   password: data.password,
-      // })
-      // if(response) router.push('/')
+      const response = await signIn({
+        email: data.email,
+        password: data.password,
+      })
+      if(response) router.push('/')
     }
   } catch (error) {
     console.log(error);
@@ -81,7 +81,7 @@ const onSubmit = async (data: z.infer<typeof formSchema>) => {
           <h1 className='text-24 lg:text-36 font-semibold text-gray-900'>
             {user? 'Link Account' : type === 'sign-in' ? 'Sign In' : 'Sign Up'}
             <p className='text-16 font-normal text-gray-600 '>
-              {user? 'Link your account to  get started' : 'Please enter your details'}
+              {user? 'Tap on Protector to link your account and get started' : 'Please enter your details'}
             </p>
           </h1>
         </div>
