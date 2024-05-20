@@ -1,14 +1,16 @@
-import * as Sentry from "@sentry/nextjs";
+import * as Sentry from '@sentry/nextjs';
 
 Sentry.init({
-  dsn: "https://2eec33af47ea9b922679ecb66b513f93@o4507232086720512.ingest.us.sentry.io/4507232089735168",
-  integrations: [
-    Sentry.replayIntegration(),
-  ],
-  replaysSessionSampleRate: 0.1,
-  replaysOnErrorSampleRate: 1.0,
-  tracePropagationTargets: ['third-party-site.com', /^https:\/\/yourserver\.io\/api/],
-  tracesSampleRate: 1,
-  debug: false,
-  // spotlight: process.env.NODE_ENV === 'development',
+  dsn: 'https://2eec33af47ea9b922679ecb66b513f93@o4507232086720512.ingest.us.sentry.io/4507232089735168',
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+
+  // ...
+
+  // Note: if you want to override the automatic release value, do not set a
+  // `release` value here - use the environment variable `SENTRY_RELEASE`, so
+  // that it will also get attached to your source maps
 });
