@@ -275,3 +275,4 @@ export const getBank = async ({ documentId }: getBankProps) => {
     console.log(error)
   }
 }
+
